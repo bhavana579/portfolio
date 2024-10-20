@@ -1,0 +1,55 @@
+.Projects {
+    padding: 20px;
+    max-width: 800px; 
+    margin: 0 auto; 
+    color: #f5f5dc; 
+    background-color: #000; 
+}
+
+.Projects h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #f5f5dc;
+    text-transform: uppercase;
+}
+
+.project {
+    margin-bottom: 30px;
+}
+
+.project h3 {
+    font-size: 28px; 
+    margin-bottom: 10px; 
+}
+
+.project p {
+    font-size: 16px;
+    line-height: 1.5; 
+    margin: 0; 
+    text-align: justify; 
+}
+
+.Projects a {
+    color: #f5f5dc; 
+    text-decoration: none; 
+}
+
+.Projects a:hover {
+    text-decoration: underline; 
+}
+@media (max-width: 768px) {
+    .Projects h1 {
+        font-size: 40px; 
+    }
+
+    .project h3 {
+        font-size: 24px; 
+    }
+
+    .project p {
+        font-size: 14px; 
+    }
+}
