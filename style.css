@@ -1,0 +1,633 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Base Styles */
+body {
+    background: linear-gradient(to bottom, #0a0f2c, black);
+    background-attachment: fixed;
+    color: #f5f5f5;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Typography Styles */
+h1, h2, h3, h4 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: beige;
+}
+
+p {
+    color: #ddd;
+    font-size: 18px;
+}
+
+a {
+    color: beige;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #f1a7a7;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 3, 17, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: beige;
+}
+
+.navbar a {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navbar a:hover {
+    background-color: #333;
+}
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: beige;
+    text-align: center;
+    background: linear-gradient(to bottom, #0a0f2c, black);
+    padding: 20px;
+}
+
+.hero-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.hero-left img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero-left img:hover {
+    transform: scale(1.1);
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.hero-right h1 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-right p {
+    font-size: 18px;
+    font-style: italic;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+/* About Section Styles */
+.about {
+    padding: 100px 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #0a0f2c, black);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+}
+
+.about h2 {
+    font-size: 40px;
+    font-family: 'Lora', serif;
+    margin-bottom: 20px;
+    color: beige;
+}
+
+.about p {
+    font-size: 18px;
+    max-width: 900px;
+    margin: 20px auto;
+    color: #ddd;
+}
+
+/* Hobby Section Styles */
+.hobby-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hobby {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+}
+
+.hobby img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.hobby p {
+    font-size: 18px;
+    font-weight: 600;
+    color: beige;
+}
+
+/* Projects Section Styles */
+.projects {
+    padding: 100px 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #0a0f2c, black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.projects h2 {
+    font-size: 40px;
+    font-family: 'Lora', serif;
+    margin-bottom: 20px;
+    color: beige;
+}
+
+/* Container for the projects */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The wrapper for the flip effect */
+.flip-container {
+    perspective: 1000px;
+}
+
+/* Project Card Style */
+.project-card {
+    width: 100%;
+    height: 300px;
+    background-color: #0e0b0b;
+    border: 1px solid #010823;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+/* Front side of the card */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+/* Back side of the card */
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    border-radius: 8px;
+}
+
+/* Hover effect for flip */
+.flip-container:hover .project-card {
+    transform: rotateY(180deg);
+}
+
+/* Link style on the back of the card */
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #040119;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    background-color: #0a0f2c;
+    transition: background-color 0.3s ease;
+}
+
+/* General Styling */
+.skills-section {
+    padding: 100px 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #0a0f2c, black);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+}
+
+/* Container for the Skill Cards */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+/* The wrapper for the flip effect */
+.flip-container {
+    perspective: 1000px;
+}
+
+.skills-section h2 {
+    font-size: 40px;
+    font-family: 'Lora', serif;
+    margin-bottom: 20px;
+    color: beige;
+}
+
+/* Skill Card - Front and Back */
+.skill-card {
+    width: 100%;
+    height: 300px;
+    background: #0e0b0b;
+    border: 1px solid #010823;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+/* Front side of the card (Image and Heading) */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+/* Back side of the card (Information) */
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f0c3b;
+    color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Card Back Styles */
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f0c3b;
+    color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover effect for flip */
+.flip-container:hover .skill-card {
+    transform: rotateY(180deg); 
+}
+
+/* Image inside the card */
+.skill-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Heading below the image */
+.skill-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: beige;
+    font-weight: 600; 
+}
+
+/* Styling the information paragraph */
+.card-back p {
+    font-size: 14px;
+    color: beige;
+}
+
+/* Card hover effect */
+.skill-card:hover {
+    cursor: pointer; 
+}
+
+@media (max-width: 900px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-container {
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* Contact Section Styles */
+.contact {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: 'Lora', serif;
+    color: beige;
+}
+
+.contact p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #dcdcdc;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Input Box */
+.input-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: beige;
+    text-align: left;
+}
+
+.input-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1a1f38; 
+    color: white;
+}
+
+/* Message Box */
+.message-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.message-box label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: beige;
+    text-align: left;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1a1f38; 
+    color: white;
+    resize: none;
+}
+
+/* Button Styles */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a1f38;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1a1f38;
+    transition: background-color 0.3s ease;
+}
+
+/* Contact Info Styles */
+.contact-info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-info h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'Lora', serif;
+    color: beige;
+}
+
+/* Social Links Styles */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: beige;
+    font-size: 16px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.social-link:hover {
+    color: whitesmoke;
+}
+
+.social-link:hover .social-icon {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(75%) saturate(1302%) hue-rotate(123deg) brightness(94%) contrast(88%);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: beige;
+}
+
+/* Responsive design for tablets and smaller screens */
+@media (max-width: 1024px) {
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .contact-form {
+        padding: 20px; 
+    }
+
+    .input-group {
+        flex-direction: column; 
+    }
+
+    .input-box {
+        margin-bottom: 15px;
+    }
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .input-group {
+        flex-direction: column; 
+    }
+
+    .input-box {
+        margin-bottom: 10px;
+    }
+
+    .contact-info h3 {
+        font-size: 24px; 
+    }
+
+    .social-links {
+        flex-direction: column; 
+    }
+}
+
+/* Mobile-first design */
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .contact-form {
+        padding: 10px;
+    }
+
+    .input-box input, .message-box textarea {
+        font-size: 14px; 
+    }
+
+    button {
+        padding: 8px 15px; 
+    }
+
+    .contact-info h3 {
+        font-size: 20px; 
+    }
+}
